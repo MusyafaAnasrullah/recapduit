@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <!-- Outer Glow / Soft Shadow -->
+  <defs>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0284c7" flood-opacity="0.25"/>
+    </filter>
+    <linearGradient id="bubbleBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <linearGradient id="chartFill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="coinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Speech Bubble Body -->
+  <g filter="url(#softGlow)">
+    <!-- Main bubble path with speech tail on bottom-left -->
+    <path d="M 120 70 
+             L 380 70 
+             A 50 50 0 0 1 430 120 
+             L 430 290 
+             A 50 50 0 0 1 380 340 
+             L 200 340 
+             L 160 410 
+             L 160 340 
+             L 120 340 
+             A 50 50 0 0 1 70 290 
+             L 70 120 
+             A 50 50 0 0 1 120 70 Z" 
+          fill="#FFFFFF" 
+          stroke="url(#bubbleBorder)" 
+          stroke-width="26" 
+          stroke-linejoin="round"
+          stroke-linecap="round"/>
+
+    <!-- Inside Growth Area Chart Fill -->
+    <path d="M 85 305 
+             L 105 300 
+             L 210 215 
+             L 265 285 
+             L 415 130 
+             L 415 280 
+             A 40 40 0 0 1 375 325 
+             L 185 325 
+             L 145 325 Z" 
+          fill="url(#chartFill)" />
+
+    <!-- Rp Text -->
+    <text x="180" y="175" 
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+          font-size="88" 
+          font-weight="900" 
+          fill="#0284c7" 
+          letter-spacing="-2">Rp</text>
+
+    <!-- Upward Trend Line & Peak Node -->
+    <path d="M 85 305 
+             L 210 215 
+             L 265 285 
+             L 415 130" 
+          fill="none" 
+          stroke="#FFFFFF" 
+          stroke-width="22" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+    
+    <path d="M 85 305 
+             L 210 215 
+             L 265 285 
+             L 415 130" 
+          fill="none" 
+          stroke="#0284c7" 
+          stroke-width="14" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+
+    <!-- Peak circular node -->
+    <circle cx="415" cy="130" r="32" fill="#0284c7" stroke="#FFFFFF" stroke-width="8"/>
+    <circle cx="415" cy="130" r="18" fill="#38bdf8"/>
+
+    <!-- Coin Stack on Bottom-Right -->
+    <g transform="translate(325, 275)">
+      <!-- Bottom Coin 3 -->
+      <ellipse cx="65" cy="120" rx="60" ry="24" fill="#0369a1" stroke="#0284c7" stroke-width="8"/>
+      <path d="M 5 95 A 60 24 0 0 0 125 95 L 125 120 A 60 24 0 0 1 5 120 Z" fill="#0284c7" stroke="#014f7a" stroke-width="6"/>
+
+      <!-- Middle Coin 2 -->
+      <ellipse cx="65" cy="95" rx="60" ry="24" fill="#0369a1" stroke="#0284c7" stroke-width="8"/>
+      <path d="M 5 70 A 60 24 0 0 0 125 70 L 125 95 A 60 24 0 0 1 5 95 Z" fill="#0ea5e9" stroke="#0284c7" stroke-width="6"/>
+
+      <!-- Top Coin 1 -->
+      <path d="M 5 45 A 60 24 0 0 0 125 45 L 125 70 A 60 24 0 0 1 5 70 Z" fill="#0284c7" stroke="#0369a1" stroke-width="6"/>
+      <ellipse cx="65" cy="45" rx="60" ry="24" fill="#38bdf8" stroke="#0284c7" stroke-width="8"/>
+      <ellipse cx="65" cy="45" rx="48" ry="18" fill="none" stroke="#0284c7" stroke-width="4" stroke-dasharray="6,4"/>
+
+      <!-- Dollar sign on coin -->
+      <text x="65" y="55" 
+            text-anchor="middle" 
+            font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" 
+            font-size="36" 
+            font-weight="900" 
+            fill="#0369a1">$</text>
+    </g>
+  </g>
+</svg>
