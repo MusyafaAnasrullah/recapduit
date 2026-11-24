@@ -17,6 +17,15 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('phone', 50)->nullable();
+            $table->string('avatar')->nullable();
+            $table->enum('plan', ['Free', 'Pro', 'Lifetime'])->default('Pro');
+            $table->boolean('is_connected')->default(true);
+            $table->string('connected_phone', 50)->nullable();
+            $table->string('bot_nickname', 50)->default('bos');
+            $table->string('referral_code', 50)->unique();
+            $table->decimal('referral_balance', 15, 2)->default(0);
+            $table->decimal('pending_referral', 15, 2)->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
